@@ -1,0 +1,726 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusAI | Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* =========================
+           GM UNIVERSITY TOP HEADER
+        ========================= */
+
+        .college-header {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+
+            padding: 18px 0 22px;
+
+            border-bottom: 1px solid #e5e7eb;
+
+            margin-bottom: 24px;
+        }
+
+        .college-logo {
+            width: 70px;
+            height: 70px;
+
+            object-fit: contain;
+
+            flex-shrink: 0;
+        }
+
+        .college-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .college-name {
+            color: #c62828;
+
+            font-size: 20px;
+            font-weight: 900;
+
+            letter-spacing: 0.5px;
+
+            margin-bottom: 4px;
+        }
+
+        .portal-name {
+            color: #64748b;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            letter-spacing: 0.3px;
+        }
+
+        /* =========================
+           SIDEBAR
+        ========================= */
+
+        .sidebar a {
+            text-decoration: none !important;
+            color: inherit !important;
+        }
+
+        .sidebar .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            width: 100%;
+            box-sizing: border-box;
+
+            padding: 12px 16px;
+
+            color: #cbd5e1 !important;
+
+            text-decoration: none !important;
+
+            border-radius: 10px;
+
+            transition: all 0.2s ease;
+        }
+
+        .sidebar .nav-item:hover {
+            color: #ffffff !important;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .sidebar .nav-item.active {
+            color: #ffffff !important;
+            background: rgba(99, 102, 241, 0.18);
+        }
+
+        .sidebar .nav-item span {
+            min-width: 20px;
+            text-align: center;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .college-header {
+                gap: 12px;
+            }
+
+            .college-logo {
+                width: 55px;
+                height: 55px;
+            }
+
+            .college-name {
+                font-size: 15px;
+            }
+
+            .portal-name {
+                font-size: 11px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<div class="app">
+
+
+    <!-- =====================================
+         SIDEBAR
+    ====================================== -->
+
+    <aside class="sidebar">
+
+        <!-- KEEP CAMPUSAI SIDEBAR -->
+        <div class="sidebar-logo">
+
+            
+            <div>
+                <div class="logo-title">
+                    CampusAI
+                </div>
+
+                
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav>
+<a href="faculty-login.html" class="nav-item">
+    <span>👨‍🏫</span>
+    <span>Faculty Portal</span>
+</a>
+            <a href="dashboard.html" class="nav-item active">
+                <span>🏠</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="ai.html" class="nav-item">
+                <span>🤖</span>
+                <span>AI Assistant</span>
+            </a>
+
+            <a href="academic.html" class="nav-item">
+                <span>📚</span>
+                <span>Academic AI</span>
+            </a>
+
+            <a href="performance.html" class="nav-item">
+                <span>📊</span>
+                <span>Performance</span>
+            </a>
+
+            <a href="attendance.html" class="nav-item">
+                <span>🗓️</span>
+                <span>Attendance</span>
+            </a>
+
+            <a href="feedback.html" class="nav-item">
+                <span>💬</span>
+                <span>Feedback</span>
+            </a>
+
+            <a href="events.html" class="nav-item">
+                <span>🎯</span>
+                <span>Events</span>
+            </a>
+
+            <a href="career.html" class="nav-item">
+                <span>🚀</span>
+                <span>Career</span>
+            </a>
+
+            <a href="resources.html" class="nav-item">
+                <span>📁</span>
+                <span>Resources</span>
+            </a>
+
+            <a href="content.html" class="nav-item">
+                <span>✨</span>
+                <span>AI Content</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="index.html" class="nav-item">
+                <span>↩️</span>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================
+         MAIN CONTENT
+    ====================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================
+             COLLEGE HEADER
+        ================================== -->
+
+        <div class="college-header">
+
+            <!-- OFFICIAL GMU LOGO -->
+            <img
+    src="https://www.gmu.ac.in/assets/imgs/logo.jpg"
+    alt="GM University Logo"
+    class="college-logo"
+>
+
+            <div class="college-details">
+
+                <div class="college-name">
+                    GM UNIVERSITY, DAVANGERE
+                </div>
+
+                <div class="portal-name">
+                    GM UNIVERSITY • STUDENT PORTAL
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================
+             TOP BAR
+        ================================== -->
+
+        <div class="topbar">
+
+            <div>
+                <div class="small-text">
+                    SMART CAMPUS MANAGEMENT
+                </div>
+            </div>
+
+
+            <div class="profile">
+
+                <div class="avatar">
+                    S
+                </div>
+
+                <div>
+
+                    <strong>
+                        Sampada
+                    </strong>
+
+                    <div class="small-text">
+                        B.Tech ISE • First Year
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================
+             WELCOME
+        ================================== -->
+
+        <section class="welcome">
+
+            <div>
+
+                <div class="small-text">
+                    WELCOME BACK 👋
+                </div>
+
+                <h1>
+                    Good morning, Sampada
+                </h1>
+
+                <p>
+                    Your intelligent campus companion is ready to help.
+                </p>
+
+            </div>
+
+
+            <div class="ai-status">
+
+                <span class="status-dot"></span>
+
+                CampusAI Online
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             STATS
+        ================================== -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📚
+                </div>
+
+                <div>
+
+                    <div class="small-text">
+                        Attendance
+                    </div>
+
+                    <h2>
+                        88%
+                    </h2>
+
+                    <span class="positive">
+                        ● Good standing
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📈
+                </div>
+
+                <div>
+
+                    <div class="small-text">
+                        Performance
+                    </div>
+
+                    <h2>
+                        82%
+                    </h2>
+
+                    <span class="positive">
+                        ● Above average
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📝
+                </div>
+
+                <div>
+
+                    <div class="small-text">
+                        Assignments
+                    </div>
+
+                    <h2>
+                        7/8
+                    </h2>
+
+                    <span class="neutral">
+                        ● 1 pending
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🎯
+                </div>
+
+                <div>
+
+                    <div class="small-text">
+                        AI Recommendations
+                    </div>
+
+                    <h2>
+                        5
+                    </h2>
+
+                    <span class="positive">
+                        ● Available
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             DASHBOARD GRID
+        ================================== -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- SMART INSIGHTS -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <div class="section-label">
+                            AI INSIGHTS
+                        </div>
+
+                        <h2>
+                            Smart Insights
+                        </h2>
+
+                    </div>
+
+                    <div class="ai-badge">
+                        AI Powered
+                    </div>
+
+                </div>
+
+
+                <div class="insight">
+
+                    <div class="insight-icon">
+                        📚
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Academic Focus
+                        </strong>
+
+                        <p>
+                            Your upcoming exams suggest focusing on
+                            Engineering Mathematics and Digital Logic.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="insight">
+
+                    <div class="insight-icon">
+                        📊
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Attendance Status
+                        </strong>
+
+                        <p>
+                            Your current attendance is above the
+                            required threshold.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="insight">
+
+                    <div class="insight-icon">
+                        🚀
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Career Suggestion
+                        </strong>
+
+                        <p>
+                            Start building your programming and
+                            DSA skills early for future internships.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- QUICK ACTIONS -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <div class="section-label">
+                            QUICK ACCESS
+                        </div>
+
+                        <h2>
+                            Quick Actions
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quick-actions">
+
+                    <a href="ai.html" class="action-btn">
+                        <span>🤖</span>
+                        Ask CampusAI
+                    </a>
+
+                    <a href="academic.html" class="action-btn">
+                        <span>📚</span>
+                        Study with AI
+                    </a>
+
+                    <a href="attendance.html" class="action-btn">
+                        <span>📊</span>
+                        Check Attendance
+                    </a>
+
+                    <a href="career.html" class="action-btn">
+                        <span>🚀</span>
+                        Career Guidance
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             EVENTS
+        ================================== -->
+
+        <section class="panel events-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <div class="section-label">
+                        CAMPUS LIFE
+                    </div>
+
+                    <h2>
+                        Upcoming Events
+                    </h2>
+
+                </div>
+
+
+                <a href="events.html" class="view-btn">
+                    View All →
+                </a>
+
+            </div>
+
+
+            <div class="events">
+
+
+                <div class="event">
+
+                    <div class="date">
+
+                        <strong>
+                            DEC
+                        </strong>
+
+                        <span>
+                            03
+                        </span>
+
+                    </div>
+
+
+                    <div class="event-info">
+
+                        <h3>
+                            IGNITERON
+                        </h3>
+
+                        <p>
+                            Technical Event • GM University
+                        </p>
+
+                    </div>
+
+
+                    <div class="event-tag">
+                        Upcoming
+                    </div>
+
+                </div>
+
+
+
+                <div class="event">
+
+                    <div class="date">
+
+                        <strong>
+                            NOV
+                        </strong>
+
+                        <span>
+                            21
+                        </span>
+
+                    </div>
+
+
+                    <div class="event-info">
+
+                        <h3>
+                            Kannada Kalavaibhava
+                        </h3>
+
+                        <p>
+                            Cultural Event • GM University
+                        </p>
+
+                    </div>
+
+
+                    <div class="event-tag">
+                        Completed
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
+```

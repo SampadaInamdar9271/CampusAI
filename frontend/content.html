@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Content | CampusAI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <div class="logo-mark">AI</div>
+
+            <div>
+                <h2>CampusAI</h2>
+                <p>Smart Campus</p>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="nav-item">
+                <span>🏠</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="ai.html" class="nav-item">
+                <span>🤖</span>
+                <span>AI Assistant</span>
+            </a>
+
+            <a href="academic.html" class="nav-item">
+                <span>📚</span>
+                <span>Academic AI</span>
+            </a>
+
+            <a href="performance.html" class="nav-item">
+                <span>📊</span>
+                <span>Performance</span>
+            </a>
+
+            <a href="attendance.html" class="nav-item">
+                <span>🕐</span>
+                <span>Attendance</span>
+            </a>
+
+            <a href="feedback.html" class="nav-item">
+                <span>💬</span>
+                <span>Feedback</span>
+            </a>
+
+            <a href="events.html" class="nav-item">
+                <span>📅</span>
+                <span>Events</span>
+            </a>
+
+            <a href="career.html" class="nav-item">
+                <span>🚀</span>
+                <span>Career</span>
+            </a>
+
+            <a href="resources.html" class="nav-item">
+                <span>📖</span>
+                <span>Resources</span>
+            </a>
+
+            <a href="content.html" class="nav-item active">
+                <span>✨</span>
+                <span>AI Content</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="faculty-login.html" class="nav-item">
+                <span>👨‍🏫</span>
+                <span>Faculty Portal</span>
+            </a>
+
+            <a href="index.html" class="nav-item">
+                <span>↩️</span>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div>
+
+                <div class="small-text">
+                    GM UNIVERSITY • STUDENT PORTAL
+                </div>
+
+                <h1>
+                    AI Content Generation
+                </h1>
+
+            </div>
+
+            <div class="profile">
+
+                <div>
+                    <strong>Sampada</strong>
+                    <span>ISE • 1st Year</span>
+                </div>
+
+                <div class="avatar">
+                    S
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE -->
+        <div class="page-container">
+
+
+            <!-- HERO -->
+            <section class="page-hero">
+
+                <div>
+
+                    <span class="section-label">
+                        GENERATIVE AI
+                    </span>
+
+                    <h2>
+                        Create Learning Content with AI
+                    </h2>
+
+                    <p>
+                        Generate notes, explanations, revision material,
+                        questions and study content from a topic.
+                    </p>
+
+                </div>
+
+                <div class="ai-online">
+
+                    <span class="status-dot"></span>
+
+                    AI Content Engine
+
+                </div>
+
+            </section>
+
+
+            <!-- GENERATOR -->
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            CONTENT GENERATOR
+                        </span>
+
+                        <h3>
+                            What would you like to generate?
+                        </h3>
+
+                    </div>
+
+                    <span class="ai-badge">
+                        AI
+                    </span>
+
+                </div>
+
+
+                <div class="form-card">
+
+                    <label for="contentTopic">
+                        Enter your topic
+                    </label>
+
+                    <input
+                        type="text"
+                        id="contentTopic"
+                        placeholder="Example: Boolean Algebra"
+                    >
+
+
+                    <label for="contentType">
+                        Select content type
+                    </label>
+
+                    <select id="contentType">
+
+                        <option value="notes">
+                            Study Notes
+                        </option>
+
+                        <option value="explanation">
+                            Simple Explanation
+                        </option>
+
+                        <option value="questions">
+                            Practice Questions
+                        </option>
+
+                        <option value="summary">
+                            Quick Revision
+                        </option>
+
+                        <option value="flashcards">
+                            Flashcards
+                        </option>
+
+                    </select>
+
+
+                    <button
+                        class="action-btn primary"
+                        onclick="generateContent()">
+
+                        ✨ Generate Content
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- QUICK TOPICS -->
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            QUICK START
+                        </span>
+
+                        <h3>
+                            Try a Topic
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="tool-grid">
+
+                    <button
+                        class="tool-card content-topic"
+                        onclick="setTopic('Boolean Algebra')">
+
+                        <div class="icon-box">
+                            🔢
+                        </div>
+
+                        <h3>
+                            Boolean Algebra
+                        </h3>
+
+                        <p>
+                            Digital logic and Boolean expressions.
+                        </p>
+
+                    </button>
+
+
+                    <button
+                        class="tool-card content-topic"
+                        onclick="setTopic('C Programming')">
+
+                        <div class="icon-box">
+                            💻
+                        </div>
+
+                        <h3>
+                            C Programming
+                        </h3>
+
+                        <p>
+                            Programming fundamentals and problem solving.
+                        </p>
+
+                    </button>
+
+
+                    <button
+                        class="tool-card content-topic"
+                        onclick="setTopic('Artificial Intelligence')">
+
+                        <div class="icon-box">
+                            🤖
+                        </div>
+
+                        <h3>
+                            Artificial Intelligence
+                        </h3>
+
+                        <p>
+                            AI concepts and intelligent systems.
+                        </p>
+
+                    </button>
+
+
+                    <button
+                        class="tool-card content-topic"
+                        onclick="setTopic('Engineering Mathematics')">
+
+                        <div class="icon-box">
+                            📐
+                        </div>
+
+                        <h3>
+                            Engineering Mathematics
+                        </h3>
+
+                        <p>
+                            Mathematical concepts for engineering students.
+                        </p>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- RESULT -->
+            <section
+                class="panel"
+                id="generatedPanel"
+                style="display:none;">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            GENERATED CONTENT
+                        </span>
+
+                        <h3 id="generatedTitle">
+                            AI Result
+                        </h3>
+
+                    </div>
+
+                    <span class="ai-badge">
+                        Generated
+                    </span>
+
+                </div>
+
+
+                <div
+                    id="generatedContent"
+                    class="result">
+                </div>
+
+            </section>
+
+
+            <!-- RESPONSIBLE AI -->
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            RESPONSIBLE AI
+                        </span>
+
+                        <h3>
+                            Use AI as a Learning Assistant
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="insight">
+
+                    <div class="insight-icon">
+                        🛡️
+                    </div>
+
+                    <div>
+
+                        <h4>
+                            Verify important information
+                        </h4>
+
+                        <p>
+                            AI-generated material should be checked against
+                            your class notes, textbooks and faculty guidance.
+                            CampusAI is designed to support learning rather
+                            than replace teachers.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script>
+
+/* ================================
+   QUICK TOPIC
+================================ */
+
+function setTopic(topic) {
+
+    document.getElementById("contentTopic").value = topic;
+
+    document
+        .getElementById("contentTopic")
+        .focus();
+
+}
+
+
+/* ================================
+   GENERATE CONTENT
+================================ */
+
+function generateContent() {
+
+    const topic =
+        document.getElementById("contentTopic")
+        .value
+        .trim();
+
+    const type =
+        document.getElementById("contentType")
+        .value;
+
+    const panel =
+        document.getElementById("generatedPanel");
+
+    const title =
+        document.getElementById("generatedTitle");
+
+    const output =
+        document.getElementById("generatedContent");
+
+
+    if (topic === "") {
+
+        alert("Please enter a topic first.");
+
+        return;
+
+    }
+
+
+    panel.style.display = "block";
+
+
+    title.textContent =
+        getTitle(type) + " — " + topic;
+
+
+    output.innerHTML =
+        generateLocalContent(topic, type);
+
+
+    panel.scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+
+/* ================================
+   TITLES
+================================ */
+
+function getTitle(type) {
+
+    if (type === "notes") {
+        return "Study Notes";
+    }
+
+    if (type === "explanation") {
+        return "Simple Explanation";
+    }
+
+    if (type === "questions") {
+        return "Practice Questions";
+    }
+
+    if (type === "summary") {
+        return "Quick Revision";
+    }
+
+    if (type === "flashcards") {
+        return "Flashcards";
+    }
+
+    return "AI Content";
+
+}
+
+
+/* ================================
+   CONTENT GENERATOR
+================================ */
+
+function generateLocalContent(topic, type) {
+
+    const cleanTopic =
+        topic.charAt(0).toUpperCase() +
+        topic.slice(1);
+
+
+    if (type === "notes") {
+
+        return `
+
+            <h3>${cleanTopic}</h3>
+
+            <p>
+                <strong>Definition:</strong>
+                ${cleanTopic} is an important concept that can be
+                understood by studying its basic principles, terminology
+                and applications.
+            </p>
+
+            <h4>Key Points</h4>
+
+            <ul>
+
+                <li>
+                    Understand the basic definition and purpose.
+                </li>
+
+                <li>
+                    Learn the important terms and concepts related to
+                    ${cleanTopic}.
+                </li>
+
+                <li>
+                    Study examples to understand how the concept is
+                    applied.
+                </li>
+
+                <li>
+                    Practice questions after learning the theory.
+                </li>
+
+            </ul>
+
+            <h4>Study Tip</h4>
+
+            <p>
+                Start with the definition, understand the concept using
+                an example and then solve practice problems without
+                looking at the answer.
+            </p>
+
+        `;
+
+    }
+
+
+    if (type === "explanation") {
+
+        return `
+
+            <h3>${cleanTopic} — Simple Explanation</h3>
+
+            <p>
+                Think of <strong>${cleanTopic}</strong> as a concept
+                that becomes easier when it is divided into smaller
+                ideas.
+            </p>
+
+            <p>
+                First understand what the concept means, then identify
+                its main components and finally see how those components
+                work together.
+            </p>
+
+            <h4>Remember</h4>
+
+            <p>
+                <strong>
+                    Definition → Concept → Example → Practice
+                </strong>
+            </p>
+
+        `;
+
+    }
+
+
+    if (type === "questions") {
+
+        return `
+
+            <h3>Practice Questions</h3>
+
+            <ol>
+
+                <li>
+                    Define ${cleanTopic}.
+                </li>
+
+                <li>
+                    Explain the main principles of ${cleanTopic}.
+                </li>
+
+                <li>
+                    Give a suitable example related to ${cleanTopic}.
+                </li>
+
+                <li>
+                    What are the important applications of
+                    ${cleanTopic}?
+                </li>
+
+                <li>
+                    Explain ${cleanTopic} with a simple diagram or
+                    example wherever applicable.
+                </li>
+
+            </ol>
+
+            <h4>Exam Tip</h4>
+
+            <p>
+                For long-answer questions, write the definition,
+                explanation, example/application and conclusion.
+            </p>
+
+        `;
+
+    }
+
+
+    if (type === "summary") {
+
+        return `
+
+            <h3>${cleanTopic} — Quick Revision</h3>
+
+            <ul>
+
+                <li>
+                    Know the definition.
+                </li>
+
+                <li>
+                    Remember the main concepts.
+                </li>
+
+                <li>
+                    Understand at least one example.
+                </li>
+
+                <li>
+                    Learn important applications.
+                </li>
+
+                <li>
+                    Practice questions before the examination.
+                </li>
+
+            </ul>
+
+            <p>
+                <strong>
+                    Quick formula:
+                </strong>
+
+                Learn → Understand → Practice → Revise
+            </p>
+
+        `;
+
+    }
+
+
+    if (type === "flashcards") {
+
+        return `
+
+            <div class="flashcard">
+
+                <h4>Card 1</h4>
+
+                <p>
+                    <strong>What is ${cleanTopic}?</strong>
+                </p>
+
+                <p>
+                    A concept that should be understood through its
+                    definition, principles and applications.
+                </p>
+
+            </div>
+
+
+            <div class="flashcard">
+
+                <h4>Card 2</h4>
+
+                <p>
+                    <strong>
+                        What should you learn first?
+                    </strong>
+                </p>
+
+                <p>
+                    Start with the basic definition and terminology.
+                </p>
+
+            </div>
+
+
+            <div class="flashcard">
+
+                <h4>Card 3</h4>
+
+                <p>
+                    <strong>
+                        How should you prepare?
+                    </strong>
+                </p>
+
+                <p>
+                    Understand the concept, study examples and solve
+                    practice questions.
+                </p>
+
+            </div>
+
+        `;
+
+    }
+
+
+    return `
+        <p>
+            Content generated for <strong>${cleanTopic}</strong>.
+        </p>
+    `;
+
+}
+
+</script>
+
+</body>
+</html>

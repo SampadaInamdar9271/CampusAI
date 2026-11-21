@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Academic AI | CampusAI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-mark"></div>
+
+            <div>
+                <h2>CampusAI</h2>
+                
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <a href="dashboard.html" class="nav-item">
+                <span>⌂</span>
+                Dashboard
+            </a>
+
+            <a href="ai.html" class="nav-item">
+                <span>🤖</span>
+                AI Assistant
+            </a>
+
+            <a href="academic.html" class="nav-item active">
+                <span>📚</span>
+                Academic AI
+            </a>
+
+            <a href="performance.html" class="nav-item">
+                <span>📊</span>
+                Performance
+            </a>
+
+            <a href="attendance.html" class="nav-item">
+                <span>✓</span>
+                Attendance
+            </a>
+
+            <a href="feedback.html" class="nav-item">
+                <span>💬</span>
+                Feedback
+            </a>
+
+            <a href="events.html" class="nav-item">
+                <span>📅</span>
+                Events
+            </a>
+
+            <a href="career.html" class="nav-item">
+                <span>🚀</span>
+                Career AI
+            </a>
+
+            <a href="resources.html" class="nav-item">
+                <span>📖</span>
+                Resources
+            </a>
+
+            <a href="content.html" class="nav-item">
+                <span>✦</span>
+                Content Generator
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+            <span>●</span>
+            AI System Online
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+
+        <!-- TOP BAR -->
+
+        <div class="topbar">
+
+            <div>
+                <div class="small-text">
+                    Intelligent Learning
+                </div>
+
+                <h1>
+                    Academic AI
+                </h1>
+            </div>
+
+
+            <div class="profile">
+
+                <div class="avatar">
+                    S
+                </div>
+
+                <div>
+                    <strong>Student</strong>
+                    <small>ISE • 1st Year</small>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= HERO ================= -->
+
+        <section class="page-hero">
+
+            <div>
+
+                <span class="section-label">
+                    AI LEARNING ASSISTANT
+                </span>
+
+                <h2>
+                    Learn smarter with CampusAI
+                </h2>
+
+                <p>
+                    Generate summaries, quizzes, practice questions
+                    and personalised study plans using AI.
+                </p>
+
+            </div>
+
+
+            <div class="ai-online">
+
+                <span class="status-dot"></span>
+
+                AI Online
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= TOOL CARDS ================= -->
+
+        <section class="tool-grid">
+
+
+            <!-- SUMMARY -->
+
+            <div class="tool-card">
+
+                <div class="icon-box">
+                    📝
+                </div>
+
+                <h3>
+                    Summary
+                </h3>
+
+                <p>
+                    Get a simple explanation and summary of any topic.
+                </p>
+
+                <button
+                    class="action-btn"
+                    onclick="selectTool('Summary')"
+                >
+                    Generate Summary
+                </button>
+
+            </div>
+
+
+
+            <!-- QUIZ -->
+
+            <div class="tool-card">
+
+                <div class="icon-box">
+                    🧠
+                </div>
+
+                <h3>
+                    Quiz
+                </h3>
+
+                <p>
+                    Generate AI-powered quiz questions to test your knowledge.
+                </p>
+
+                <button
+                    class="action-btn"
+                    onclick="selectTool('Quiz')"
+                >
+                    Generate Quiz
+                </button>
+
+            </div>
+
+
+
+            <!-- PRACTICE -->
+
+            <div class="tool-card">
+
+                <div class="icon-box">
+                    ✍️
+                </div>
+
+                <h3>
+                    Practice Questions
+                </h3>
+
+                <p>
+                    Get useful questions for exam preparation.
+                </p>
+
+                <button
+                    class="action-btn"
+                    onclick="selectTool('Practice Questions')"
+                >
+                    Generate Questions
+                </button>
+
+            </div>
+
+
+
+            <!-- STUDY PLAN -->
+
+            <div class="tool-card">
+
+                <div class="icon-box">
+                    📅
+                </div>
+
+                <h3>
+                    Study Plan
+                </h3>
+
+                <p>
+                    Create a structured study plan for your subject.
+                </p>
+
+                <button
+                    class="action-btn"
+                    onclick="selectTool('Study Plan')"
+                >
+                    Create Study Plan
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= INPUT ================= -->
+
+        <section class="form-card">
+
+            <span class="section-label">
+                AI GENERATOR
+            </span>
+
+            <h3>
+                What do you want to learn?
+            </h3>
+
+
+            <label for="academicTopic">
+                Enter Topic
+            </label>
+
+            <input
+                type="text"
+                id="academicTopic"
+                placeholder="Example: Boolean Algebra"
+            >
+
+
+            <label for="academicType">
+                Select Tool
+            </label>
+
+            <select id="academicType">
+
+                <option value="Summary">
+                    Summary
+                </option>
+
+                <option value="Quiz">
+                    Quiz
+                </option>
+
+                <option value="Practice Questions">
+                    Practice Questions
+                </option>
+
+                <option value="Study Plan">
+                    Study Plan
+                </option>
+
+            </select>
+
+
+            <button
+                class="action-btn"
+                onclick="generateAcademicContent()"
+                style="margin-top:20px;"
+            >
+                Generate with CampusAI
+            </button>
+
+        </section>
+
+
+
+        <!-- ================= RESULT ================= -->
+
+        <section
+            class="panel"
+            id="academicResult"
+            style="margin-top:25px;"
+        >
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="section-label">
+                        AI RESULT
+                    </span>
+
+                    <h3>
+                        CampusAI Response
+                    </h3>
+
+                </div>
+
+                <span class="ai-badge">
+                    AI Generated
+                </span>
+
+            </div>
+
+
+            <div
+                id="resultContent"
+                class="result"
+            >
+                Your generated content will appear here.
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= RESPONSIBLE AI ================= -->
+
+        <section
+            class="panel"
+            style="margin-top:25px;"
+        >
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="section-label">
+                        RESPONSIBLE AI
+                    </span>
+
+                    <h3>
+                        Use AI as a learning assistant
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="insight">
+
+                <div class="insight-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <strong>
+                        Verify important information
+                    </strong>
+
+                    <p>
+                        AI-generated content should support your learning.
+                        Always compare important academic information with
+                        your class notes, textbooks and faculty guidance.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+function selectTool(tool) {
+
+    const select = document.getElementById("academicType");
+
+    select.value = tool;
+
+    document.getElementById("academicTopic").focus();
+
+}
+
+
+async function generateAcademicContent() {
+
+    const topic =
+        document.getElementById("academicTopic").value.trim();
+
+    const type =
+        document.getElementById("academicType").value;
+
+    const result =
+        document.getElementById("resultContent");
+
+
+    /* CHECK TOPIC */
+
+    if (topic === "") {
+
+        result.textContent =
+            "Please enter a topic first.";
+
+        document.getElementById("academicTopic").focus();
+
+        return;
+
+    }
+
+
+    /* LOADING */
+
+    result.textContent =
+        "CampusAI is generating your " +
+        type.toLowerCase() +
+        "...";
+
+
+    try {
+
+        const response = await fetch(
+            "http://127.0.0.1:5001/api/chat",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+
+                    message:
+                        createAcademicPrompt(topic, type)
+
+                })
+            }
+        );
+
+
+        const data =
+            await response.json();
+
+
+        /* BACKEND ERROR */
+
+        if (!response.ok) {
+
+            result.textContent =
+                "CampusAI Error: " +
+                (data.error || "Something went wrong.");
+
+            return;
+
+        }
+
+
+        /* SUCCESS */
+
+        if (data.reply) {
+
+            result.innerHTML =
+                formatAIResponse(data.reply);
+
+        }
+
+        else {
+
+            result.textContent =
+                "CampusAI did not return an answer.";
+
+        }
+
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "Academic AI Error:",
+            error
+        );
+
+        result.textContent =
+            "Could not connect to the CampusAI server. Make sure your backend is running on port 5001.";
+
+    }
+
+}
+
+
+/* ================= PROMPTS ================= */
+
+function createAcademicPrompt(topic, type) {
+
+    if (type === "Summary") {
+
+        return `
+You are CampusAI Academic Assistant.
+
+Create a clear and simple STUDY SUMMARY for:
+
+${topic}
+
+The student is a first-year engineering student.
+
+Include:
+1. Definition
+2. Important concepts
+3. Key points
+4. Important formulas or rules if applicable
+5. A simple example
+6. Exam points to remember
+
+Actually provide the summary.
+Do not tell the student what they should study.
+        `;
+
+    }
+
+
+    if (type === "Quiz") {
+
+        return `
+You are CampusAI Academic Assistant.
+
+Create a useful QUIZ for:
+
+${topic}
+
+The student is a first-year engineering student.
+
+Create 5 multiple-choice questions.
+
+For every question:
+- Give four options
+- Clearly indicate the correct answer
+- Give a short explanation
+
+Make the questions useful for exam preparation.
+
+Actually create the quiz.
+        `;
+
+    }
+
+
+    if (type === "Practice Questions") {
+
+        return `
+You are CampusAI Academic Assistant.
+
+Create PRACTICE QUESTIONS for:
+
+${topic}
+
+The student is a first-year engineering student.
+
+Create:
+- 3 short-answer questions
+- 3 medium-answer questions
+- 2 long-answer questions
+
+Include answers after the questions.
+
+Make them useful for college exam preparation.
+
+Actually provide the questions and answers.
+        `;
+
+    }
+
+
+    if (type === "Study Plan") {
+
+        return `
+You are CampusAI Academic Assistant.
+
+Create a STUDY PLAN for:
+
+${topic}
+
+The student is a first-year engineering student.
+
+Create a practical 7-day study plan.
+
+For each day include:
+- Topic
+- What to study
+- Practice activity
+- Revision activity
+
+Keep it realistic and simple.
+
+Actually create the complete study plan.
+        `;
+
+    }
+
+
+    return `
+Explain ${topic} clearly for a first-year engineering student.
+    `;
+
+}
+
+
+/* ================= FORMAT AI RESPONSE ================= */
+
+function formatAIResponse(text) {
+
+    return text
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+        .replace(/\n/g, "<br>");
+}
+
+</script>
+
+</body>
+
+</html>

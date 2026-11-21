@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusAI | Resources</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .resources-hero {
+            background: linear-gradient(135deg, #eef2ff, #f8fafc);
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+
+        .resources-hero h1 {
+            margin: 6px 0;
+        }
+
+        .resources-hero p {
+            color: #64748b;
+            margin: 0;
+        }
+
+        .resource-controls {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 220px;
+            padding: 12px 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 9px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .search-box:focus {
+            border-color: #6366f1;
+        }
+
+        .category-filter {
+            padding: 12px 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 9px;
+            background: white;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .resource-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 20px;
+            transition: 0.2s;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
+            border-color: #c7d2fe;
+        }
+
+        .resource-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            background: #eef2ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 14px;
+        }
+
+        .resource-card h3 {
+            margin: 0 0 8px;
+        }
+
+        .resource-card p {
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.6;
+            min-height: 65px;
+        }
+
+        .resource-tag {
+            display: inline-block;
+            padding: 5px 9px;
+            background: #f1f5f9;
+            color: #475569;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .resource-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: #6366f1;
+            color: white !important;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .resource-btn:hover {
+            background: #4f46e5;
+        }
+
+        .no-results {
+            display: none;
+            text-align: center;
+            padding: 35px;
+            color: #64748b;
+            background: white;
+            border-radius: 14px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .tips-box {
+            margin-top: 20px;
+            padding: 20px;
+            background: #eef2ff;
+            border-radius: 12px;
+            color: #3730a3;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 950px) {
+            .resource-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">
+                AI
+            </div>
+
+            <div>
+                <div class="logo-title">
+                    CampusAI
+                </div>
+
+                <div class="logo-subtitle">
+                    Student Portal
+                </div>
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <a href="dashboard.html" class="nav-item">
+                <span>🏠</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="ai.html" class="nav-item">
+                <span>🤖</span>
+                <span>AI Assistant</span>
+            </a>
+
+            <a href="academic.html" class="nav-item">
+                <span>📚</span>
+                <span>Academic AI</span>
+            </a>
+
+            <a href="performance.html" class="nav-item">
+                <span>📊</span>
+                <span>Performance</span>
+            </a>
+
+            <a href="attendance.html" class="nav-item">
+                <span>🗓️</span>
+                <span>Attendance</span>
+            </a>
+
+            <a href="feedback.html" class="nav-item">
+                <span>💬</span>
+                <span>Feedback</span>
+            </a>
+
+            <a href="events.html" class="nav-item">
+                <span>🎯</span>
+                <span>Events</span>
+            </a>
+
+            <a href="career.html" class="nav-item">
+                <span>🚀</span>
+                <span>Career</span>
+            </a>
+
+            <a href="resources.html" class="nav-item active">
+                <span>📁</span>
+                <span>Resources</span>
+            </a>
+
+            <a href="content.html" class="nav-item">
+                <span>✨</span>
+                <span>AI Content</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="faculty-login.html" class="nav-item">
+                <span>👨‍🏫</span>
+                <span>Faculty Portal</span>
+            </a>
+
+            <a href="index.html" class="nav-item">
+                <span>↩️</span>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- MAIN -->
+
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+
+        <div class="topbar">
+
+            <div>
+
+                <div class="small-text">
+                    GM UNIVERSITY • STUDENT PORTAL
+                </div>
+
+            </div>
+
+
+            <div class="profile">
+
+                <div class="avatar">
+                    S
+                </div>
+
+                <div>
+
+                    <strong>
+                        Sampada
+                    </strong>
+
+                    <div class="small-text">
+                        B.Tech ISE • 1st Year
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- HERO -->
+
+        <section class="resources-hero">
+
+            <div class="section-label">
+                STUDENT RESOURCE HUB
+            </div>
+
+            <h1>
+                Learning Resources
+            </h1>
+
+            <p>
+                Find useful academic, programming, career and
+                university resources in one place.
+            </p>
+
+        </section>
+
+
+
+        <!-- SEARCH -->
+
+        <div class="resource-controls">
+
+            <input
+                type="text"
+                id="resourceSearch"
+                class="search-box"
+                placeholder="Search resources..."
+                oninput="filterResources()"
+            >
+
+
+            <select
+                id="categoryFilter"
+                class="category-filter"
+                onchange="filterResources()"
+            >
+
+                <option value="all">
+                    All Categories
+                </option>
+
+                <option value="academic">
+                    Academic
+                </option>
+
+                <option value="programming">
+                    Programming
+                </option>
+
+                <option value="career">
+                    Career
+                </option>
+
+                <option value="ai">
+                    AI & Technology
+                </option>
+
+                <option value="university">
+                    University
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- RESOURCE GRID -->
+
+        <div class="resource-grid" id="resourceGrid">
+
+
+            <!-- ACADEMIC -->
+
+            <div class="resource-card"
+                 data-category="academic"
+                 data-search="engineering mathematics maths">
+
+                <div class="resource-icon">
+                    📐
+                </div>
+
+                <span class="resource-tag">
+                    ACADEMIC
+                </span>
+
+                <h3>
+                    Engineering Mathematics
+                </h3>
+
+                <p>
+                    Useful reference material for matrices,
+                    calculus, differential equations and other
+                    first-year engineering mathematics topics.
+                </p>
+
+                <a
+                    href="https://www.khanacademy.org/math"
+                    target="_blank"
+                    class="resource-btn"
+                >
+                    Open Resource →
+                </a>
+
+            </div>
+
+
+
+            <!-- PROGRAMMING -->
+
+            <div class="resource-card"
+                 data-category="programming"
+                 data-search="c programming c language coding">
+
+                <div class="resource-icon">
+                    💻
+                </div>
+
+                <span class="resource-tag">
+                    PROGRAMMING
+                </span>
+
+                <h3>
+                    C Programming
+                </h3>
+
+                <p>
+                    Learn C programming concepts, syntax,
+                    functions, loops, arrays and problem solving.
+                </p>
+
+                <a
+                    href="https://www.learn-c.org/"
+                    target="_blank"
+                    class="resource-btn"
+                >
+                    Learn C →
+                </a>
+
+            </div>
+
+
+
+            <!-- PROGRAMMING -->
+
+            <div class="resource-card"
+                 data-category="programming"
+                 data-search="github coding projects open source">
+
+                <div class="resource-icon">
+                    🐙
+                </div>
+
+                <span class="resource-tag">
+                    PROGRAMMING
+                </span>
+
+                <h3>
+                    GitHub
+                </h3>
+
+                <p>
+                    Explore coding projects, build your portfolio
+                    and start contributing to open-source projects.
+                </p>
+
+                <a
+                    href="https://github.com/"
+                    target="_blank"
+                    class="resource-btn"
+                >
+                    Open GitHub →
+                </a>
+
+            </div>
+
+
+
+            <!-- AI -->
+
+            <div class="resource-card"
+                 data-category="ai"
+                 data-search="artificial intelligence machine learning ai">
+
+                <div class="resource-icon">
+                    🤖
+                </div>
+
+                <span class="resource-tag">
+                    AI & TECHNOLOGY
+                </span>
+
+                <h3>
+                    AI Fundamentals
+                </h3>
+
+                <p>
+                    Explore artificial intelligence concepts,
+                    machine learning fundamentals and AI applications.
+                </p>
+
+                <a
+                    href="https://developers.google.com/machine-learning"
+                    target="_blank"
+                    class="resource-btn"
+                >
+                    Explore AI →
+                </a>
+
+            </div>
+
+
+
+            <!-- CAREER -->
+
+            <div class="resource-card"
+                 data-category="career"
+                 data-search="coding interview dsa algorithms">
+
+                <div class="resource-icon">
+                    🚀
+                </div>
+
+                <span class="resource-tag">
+                    CAREER
+                </span>
+
+                <h3>
+                    DSA Practice
+                </h3>
+
+                <p>
+                    Practice data structures and algorithms to
+                    build strong programming and problem-solving skills.
+                </p>
+
+                <a
+                    href="https://leetcode.com/"
+                    target="_blank"
+                    class="resource-btn"
+                >
+                    Practice DSA →
+                </a>
+
+            </div>
+
+
+
+            <!-- CAREER -->
+
+            <div class="resource-card"
+                 data-category="career"
+                 data-search="linkedin jobs internship career">
+
+                <div class="resource-icon">
+                    💼
+                </div>
+
+                <span class="resource-tag">
+                    CAREER
+                </span>
+
+                <h3>
+                    LinkedIn
+                </h3>
+
+                <p>
+                    Build your professional profile, discover
+                    internships and connect with professionals.
+                </p>
+
+                <a
+                    href="https://www.linkedin.com/"
+                    target="_blank"
+                    class="resource-btn"
+                >
+                    Open LinkedIn →
+                </a>
+
+            </div>
+
+
+
+            <!-- UNIVERSITY -->
+
+            <div class="resource-card"
+                 data-category="university"
+                 data-search="gmu university davangere college">
+
+                <div class="resource-icon">
+                    🏫
+                </div>
+
+                <span class="resource-tag">
+                    UNIVERSITY
+                </span>
+
+                <h3>
+                    GM University
+                </h3>
+
+                <p>
+                    Access the official GM University website
+                    for university information and updates.
+                </p>
+
+                <a
+                    href="https://www.gmu.ac.in/"
+                    target="_blank"
+                    class="resource-btn"
+                >
+                    Visit GMU →
+                </a>
+
+            </div>
+
+
+
+            <!-- AI -->
+
+            <div class="resource-card"
+                 data-category="ai"
+                 data-search="google cloud cloud computing">
+
+                <div class="resource-icon">
+                    ☁️
+                </div>
+
+                <span class="resource-tag">
+                    AI & TECHNOLOGY
+                </span>
+
+                <h3>
+                    Google Cloud
+                </h3>
+
+                <p>
+                    Explore cloud computing, AI services and
+                    developer learning resources.
+                </p>
+
+                <a
+                    href="https://cloud.google.com/learn"
+                    target="_blank"
+                    class="resource-btn"
+                >
+                    Explore Cloud →
+                </a>
+
+            </div>
+
+
+
+            <!-- ACADEMIC -->
+
+            <div class="resource-card"
+                 data-category="academic"
+                 data-search="study notes courses learning">
+
+                <div class="resource-icon">
+                    📖
+                </div>
+
+                <span class="resource-tag">
+                    ACADEMIC
+                </span>
+
+                <h3>
+                    Online Learning
+                </h3>
+
+                <p>
+                    Find structured lessons and courses to
+                    strengthen your academic foundation.
+                </p>
+
+                <a
+                    href="https://www.coursera.org/"
+                    target="_blank"
+                    class="resource-btn"
+                >
+                    Explore Courses →
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NO RESULTS -->
+
+        <div
+            class="no-results"
+            id="noResults">
+
+            <strong>
+                No resources found.
+            </strong>
+
+            <br>
+
+            Try another search term or category.
+
+        </div>
+
+
+
+        <!-- TIPS -->
+
+        <div class="tips-box">
+
+            <strong>
+                🤖 CampusAI Tip
+            </strong>
+
+            <br>
+
+            Use these resources together with the
+            <strong>Academic AI</strong> section to create
+            summaries, quizzes and practice questions from
+            what you study.
+
+        </div>
+
+    </main>
+
+</div>
+
+
+
+<script>
+
+function filterResources() {
+
+    const search =
+        document.getElementById("resourceSearch")
+            .value
+            .toLowerCase()
+            .trim();
+
+    const category =
+        document.getElementById("categoryFilter")
+            .value;
+
+
+    const cards =
+        document.querySelectorAll(".resource-card");
+
+
+    let visibleCount = 0;
+
+
+    cards.forEach(card => {
+
+        const cardCategory =
+            card.dataset.category;
+
+        const cardSearch =
+            card.dataset.search.toLowerCase();
+
+        const cardText =
+            card.innerText.toLowerCase();
+
+
+        const matchesSearch =
+            cardSearch.includes(search) ||
+            cardText.includes(search);
+
+
+        const matchesCategory =
+            category === "all" ||
+            cardCategory === category;
+
+
+        if (matchesSearch && matchesCategory) {
+
+            card.style.display = "";
+
+            visibleCount++;
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+
+    document.getElementById("noResults")
+        .style.display =
+        visibleCount === 0
+            ? "block"
+            : "none";
+
+}
+
+</script>
+
+</body>
+
+</html>

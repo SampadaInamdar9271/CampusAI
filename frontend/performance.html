@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusAI | Performance</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .performance-hero {
+            background: linear-gradient(135deg, #eef2ff, #f8fafc);
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+
+        .performance-hero h1 {
+            margin: 6px 0;
+        }
+
+        .performance-hero p {
+            color: #64748b;
+            margin: 0;
+        }
+
+        .marks-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .marks-table th,
+        .marks-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e2e8f0;
+            text-align: left;
+        }
+
+        .marks-table th {
+            font-size: 12px;
+            color: #64748b;
+            text-transform: uppercase;
+        }
+
+        .marks-table td {
+            font-size: 15px;
+        }
+
+        .marks {
+            font-weight: 700;
+        }
+
+        .grade {
+            font-weight: 700;
+            color: #6366f1;
+        }
+
+        .performance-insight {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 12px;
+            background: #eef2ff;
+            color: #3730a3;
+            line-height: 1.7;
+        }
+
+        .subject-bars {
+            margin-top: 15px;
+        }
+
+        .subject-row {
+            margin-bottom: 18px;
+        }
+
+        .subject-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 7px;
+            font-size: 14px;
+        }
+
+        .bar {
+            height: 9px;
+            background: #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: #6366f1;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 700px) {
+            .marks-table {
+                font-size: 13px;
+            }
+
+            .marks-table th,
+            .marks-table td {
+                padding: 10px 6px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+<div class="app">
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">
+                AI
+            </div>
+
+            <div>
+                <div class="logo-title">
+                    CampusAI
+                </div>
+
+                <div class="logo-subtitle">
+                    Student Portal
+                </div>
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <a href="dashboard.html" class="nav-item">
+                <span>🏠</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="ai.html" class="nav-item">
+                <span>🤖</span>
+                <span>AI Assistant</span>
+            </a>
+
+            <a href="academic.html" class="nav-item">
+                <span>📚</span>
+                <span>Academic AI</span>
+            </a>
+
+            <a href="performance.html" class="nav-item active">
+                <span>📊</span>
+                <span>Performance</span>
+            </a>
+
+            <a href="attendance.html" class="nav-item">
+                <span>🗓️</span>
+                <span>Attendance</span>
+            </a>
+
+            <a href="feedback.html" class="nav-item">
+                <span>💬</span>
+                <span>Feedback</span>
+            </a>
+
+            <a href="events.html" class="nav-item">
+                <span>🎯</span>
+                <span>Events</span>
+            </a>
+
+            <a href="career.html" class="nav-item">
+                <span>🚀</span>
+                <span>Career</span>
+            </a>
+
+            <a href="resources.html" class="nav-item">
+                <span>📁</span>
+                <span>Resources</span>
+            </a>
+
+            <a href="content.html" class="nav-item">
+                <span>✨</span>
+                <span>AI Content</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="faculty-login.html" class="nav-item">
+                <span>👨‍🏫</span>
+                <span>Faculty Portal</span>
+            </a>
+
+            <a href="index.html" class="nav-item">
+                <span>↩️</span>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+
+        <!-- TOP BAR -->
+
+        <div class="topbar">
+
+            <div>
+
+                <div class="small-text">
+                    GM UNIVERSITY • STUDENT PORTAL
+                </div>
+
+            </div>
+
+
+            <div class="profile">
+
+                <div class="avatar">
+                    S
+                </div>
+
+                <div>
+
+                    <strong>
+                        Sampada
+                    </strong>
+
+                    <div class="small-text">
+                        B.Tech ISE • 1st Year
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- HERO -->
+
+        <section class="performance-hero">
+
+            <div class="section-label">
+                ACADEMIC ANALYTICS
+            </div>
+
+            <h1>
+                My Performance
+            </h1>
+
+            <p>
+                View your academic performance and subject-wise marks.
+            </p>
+
+        </section>
+
+
+
+        <!-- STUDENT INFO -->
+
+        <div class="panel" style="margin-bottom:20px;">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <div class="section-label">
+                        STUDENT
+                    </div>
+
+                    <h2>
+                        Sampada
+                    </h2>
+
+                </div>
+
+                <div class="ai-badge">
+                    B.Tech ISE • 1st Year
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- STATS -->
+
+        <div class="stats">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📝
+                </div>
+
+                <div>
+
+                    <div class="small-text">
+                        Average Marks
+                    </div>
+
+                    <h2 id="averageMarks">
+                        -
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🏆
+                </div>
+
+                <div>
+
+                    <div class="small-text">
+                        Best Subject
+                    </div>
+
+                    <h2 id="bestSubject">
+                        -
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📊
+                </div>
+
+                <div>
+
+                    <div class="small-text">
+                        Performance
+                    </div>
+
+                    <h2 id="performanceStatus">
+                        -
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- MARKS -->
+
+        <div class="panel" style="margin-top:20px;">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <div class="section-label">
+                        SUBJECT PERFORMANCE
+                    </div>
+
+                    <h2>
+                        My Marks
+                    </h2>
+
+                </div>
+
+                <div class="ai-badge">
+                    Out of 50
+                </div>
+
+            </div>
+
+
+            <table class="marks-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Subject
+                        </th>
+
+                        <th>
+                            Marks
+                        </th>
+
+                        <th>
+                            Percentage
+                        </th>
+
+                        <th>
+                            Grade
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="marksTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+
+        <!-- VISUAL ANALYSIS -->
+
+        <div class="panel" style="margin-top:20px;">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <div class="section-label">
+                        PERFORMANCE OVERVIEW
+                    </div>
+
+                    <h2>
+                        Subject-wise Analysis
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="subject-bars" id="subjectBars">
+            </div>
+
+        </div>
+
+
+
+        <!-- AI INSIGHT -->
+
+        <div class="panel" style="margin-top:20px;">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <div class="section-label">
+                        AI PERFORMANCE INSIGHT
+                    </div>
+
+                    <h2>
+                        CampusAI Analysis
+                    </h2>
+
+                </div>
+
+                <div class="ai-badge">
+                    AI Powered
+                </div>
+
+            </div>
+
+
+            <div
+                class="performance-insight"
+                id="performanceInsight">
+
+                Analyzing your academic performance...
+
+            </div>
+
+        </div>
+
+
+
+        <!-- STUDY RECOMMENDATION -->
+
+        <div class="panel" style="margin-top:20px;">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <div class="section-label">
+                        RECOMMENDATION
+                    </div>
+
+                    <h2>
+                        Improve Your Performance
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="performance-insight" id="recommendation">
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+
+<!-- DATABASE -->
+
+<script src="data.js"></script>
+
+
+<script>
+
+function getGrade(mark) {
+
+    if (mark >= 45) {
+        return "A+";
+    }
+
+    if (mark >= 40) {
+        return "A";
+    }
+
+    if (mark >= 35) {
+        return "B+";
+    }
+
+    if (mark >= 30) {
+        return "B";
+    }
+
+    return "C";
+}
+
+
+
+function loadPerformance() {
+
+    /* STUDENT IS FIXED TO SAMPADA */
+
+    const studentName = "Sampada";
+
+    const student = students[studentName];
+
+    const subjects = [
+        "AI",
+        "PCP",
+        "DLSS",
+        "EM1"
+    ];
+
+
+    let tableHTML = "";
+
+    let totalMarks = 0;
+
+    let bestSubject = "";
+
+    let bestMark = -1;
+
+    let weakestSubject = "";
+
+    let weakestMark = 999;
+
+
+    subjects.forEach(subject => {
+
+        const mark =
+            student.marks[subject];
+
+        const percentage =
+            Math.round((mark / 50) * 100);
+
+        const grade =
+            getGrade(mark);
+
+
+        totalMarks += mark;
+
+
+        if (mark > bestMark) {
+
+            bestMark = mark;
+
+            bestSubject = subject;
+
+        }
+
+
+        if (mark < weakestMark) {
+
+            weakestMark = mark;
+
+            weakestSubject = subject;
+
+        }
+
+
+        tableHTML += `
+
+            <tr>
+
+                <td>
+                    <strong>${subject}</strong>
+                </td>
+
+                <td class="marks">
+                    ${mark}/50
+                </td>
+
+                <td>
+                    ${percentage}%
+                </td>
+
+                <td class="grade">
+                    ${grade}
+                </td>
+
+            </tr>
+
+        `;
+
+    });
+
+
+    document.getElementById("marksTable")
+        .innerHTML = tableHTML;
+
+
+
+    /* AVERAGE */
+
+    const average =
+        Math.round(totalMarks / subjects.length);
+
+
+    document.getElementById("averageMarks")
+        .textContent = average + "/50";
+
+
+    document.getElementById("bestSubject")
+        .textContent = bestSubject;
+
+
+
+    /* PERFORMANCE STATUS */
+
+    let performanceStatus;
+
+    if (average >= 40) {
+
+        performanceStatus = "Excellent";
+
+    } else if (average >= 35) {
+
+        performanceStatus = "Good";
+
+    } else if (average >= 30) {
+
+        performanceStatus = "Average";
+
+    } else {
+
+        performanceStatus = "Needs Improvement";
+
+    }
+
+
+    document.getElementById("performanceStatus")
+        .textContent = performanceStatus;
+
+
+
+    /* SUBJECT BARS */
+
+    let barsHTML = "";
+
+
+    subjects.forEach(subject => {
+
+        const mark =
+            student.marks[subject];
+
+        const percentage =
+            Math.round((mark / 50) * 100);
+
+
+        barsHTML += `
+
+            <div class="subject-row">
+
+                <div class="subject-info">
+
+                    <strong>
+                        ${subject}
+                    </strong>
+
+                    <span>
+                        ${mark}/50 (${percentage}%)
+                    </span>
+
+                </div>
+
+
+                <div class="bar">
+
+                    <div
+                        class="bar-fill"
+                        style="width:${percentage}%;">
+                    </div>
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+
+    document.getElementById("subjectBars")
+        .innerHTML = barsHTML;
+
+
+
+    /* AI INSIGHT */
+
+    document.getElementById("performanceInsight")
+        .innerHTML = `
+
+            Your current average is
+            <strong>${average}/50</strong>.
+
+            Your strongest performance is in
+            <strong>${bestSubject}</strong>
+            with <strong>${bestMark}/50</strong>.
+
+            Your comparatively weaker subject is
+            <strong>${weakestSubject}</strong>
+            with <strong>${weakestMark}/50</strong>.
+
+            Overall, your academic performance is
+            <strong>${performanceStatus.toLowerCase()}</strong>.
+
+        `;
+
+
+
+    /* RECOMMENDATION */
+
+    document.getElementById("recommendation")
+        .innerHTML = `
+
+            Focus more revision time on
+            <strong>${weakestSubject}</strong>.
+
+            Continue maintaining your performance
+            in <strong>${bestSubject}</strong>.
+
+            A good strategy is to practice previous
+            questions, revise important concepts,
+            and regularly track your marks.
+
+        `;
+
+}
+
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    loadPerformance
+);
+
+</script>
+
+</body>
+
+</html>

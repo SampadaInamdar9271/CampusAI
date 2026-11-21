@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusAI - AI Assistant</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            CAMPUS<span>AI</span>
+        </div>
+
+        <nav>
+
+            <a href="dashboard.html" class="nav-item">
+                🏠 <span>Dashboard</span>
+            </a>
+
+            <a href="ai.html" class="nav-item active">
+                🤖 <span>AI Assistant</span>
+            </a>
+
+            <a href="academic.html" class="nav-item">
+                📚 <span>Academic AI</span>
+            </a>
+
+            <a href="performance.html" class="nav-item">
+                📊 <span>Performance</span>
+            </a>
+
+            <a href="attendance.html" class="nav-item">
+                🕐 <span>Attendance</span>
+            </a>
+
+            <a href="feedback.html" class="nav-item">
+                💬 <span>Feedback</span>
+            </a>
+
+            <a href="events.html" class="nav-item">
+                📅 <span>Events</span>
+            </a>
+
+            <a href="career.html" class="nav-item">
+                🚀 <span>Career AI</span>
+            </a>
+
+            <a href="resources.html" class="nav-item">
+                🏫 <span>Resources</span>
+            </a>
+
+            <a href="content.html" class="nav-item">
+                ✨ <span>Content Generator</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#" class="nav-item">
+                ⚙️ <span>Settings</span>
+            </a>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <div>
+                <p class="small-text">AI POWERED CAMPUS</p>
+                <h2>AI Assistant</h2>
+            </div>
+
+            <div class="profile">
+
+                <div class="notification">
+                    🔔
+                </div>
+
+                <div class="avatar">
+                    S
+                </div>
+
+                <span>Sampada</span>
+
+            </div>
+
+        </header>
+
+
+        <!-- AI HERO -->
+        <section class="welcome">
+
+            <div>
+
+                <h1>
+                    Your CampusAI Assistant 🤖
+                </h1>
+
+                <p>
+                    Ask questions about academics, campus services,
+                    events and student life.
+                </p>
+
+            </div>
+
+            <div class="ai-status">
+
+                <span class="status-dot"></span>
+
+                AI Assistant Online
+
+            </div>
+
+        </section>
+
+
+        <!-- CHAT PANEL -->
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <p class="section-label">
+                        INTELLIGENT ASSISTANCE
+                    </p>
+
+                    <h3>
+                        Chat with CampusAI
+                    </h3>
+
+                </div>
+
+                <span class="ai-badge">
+                    AI POWERED
+                </span>
+
+            </div>
+
+
+            <!-- CHAT MESSAGES -->
+            <div class="chat-messages" id="chatMessages">
+
+                <div class="message">
+
+                    <div class="message-avatar">
+                        AI
+                    </div>
+
+                    <div class="message-content">
+
+                        <strong>
+                            CampusAI
+                        </strong>
+
+                        <p>
+                            Hello! I'm your CampusAI assistant.
+                            How can I help you today?
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="message user-message">
+
+                    <div class="message-content">
+
+                        <strong>
+                            You
+                        </strong>
+
+                        <p>
+                            Hi
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="message">
+
+                    <div class="message-avatar">
+                        AI
+                    </div>
+
+                    <div class="message-content">
+
+                        <strong>
+                            CampusAI
+                        </strong>
+
+                        <p>
+                            I can help with academics, attendance,
+                            events, career guidance and campus resources.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CHAT INPUT -->
+            <div class="chat-input">
+
+                <input
+    type="text"
+    id="userQuestion"
+    placeholder="Ask CampusAI something..."
+    autocomplete="off"
+>
+                <button onclick="askAI()">
+    Send ➤
+</button>
+
+            </div>
+
+        </section>
+
+
+        <!-- SUGGESTED QUESTIONS -->
+        <section class="panel" style="margin-top: 22px;">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <p class="section-label">
+                        TRY ASKING
+                    </p>
+
+                    <h3>
+                        Suggested Questions
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="quick-actions">
+
+                <button
+                    class="action-btn"
+                    onclick="setQuestion('How can I improve my attendance?')">
+
+                    <span>🕐</span>
+
+                    <div>
+
+                        <strong>
+                            Attendance
+                        </strong>
+
+                        <small>
+                            Improve my attendance
+                        </small>
+
+                    </div>
+
+                </button>
+
+
+                <button
+                    class="action-btn"
+                    onclick="setQuestion('Create a study plan for me')">
+
+                    <span>📚</span>
+
+                    <div>
+
+                        <strong>
+                            Study Plan
+                        </strong>
+
+                        <small>
+                            Create a study plan
+                        </small>
+
+                    </div>
+
+                </button>
+
+
+                <button
+                    class="action-btn"
+                    onclick="setQuestion('What career options are available for ISE students?')">
+
+                    <span>🚀</span>
+
+                    <div>
+
+                        <strong>
+                            Career
+                        </strong>
+
+                        <small>
+                            Explore career options
+                        </small>
+
+                    </div>
+
+                </button>
+
+
+                <button
+                    class="action-btn"
+                    onclick="setQuestion('What campus events are coming up?')">
+
+                    <span>📅</span>
+
+                    <div>
+
+                        <strong>
+                            Events
+                        </strong>
+
+                        <small>
+                            Find campus events
+                        </small>
+
+                    </div>
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

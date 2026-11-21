@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusAI | Attendance</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <div class="logo-icon">AI</div>
+
+            <div>
+                <div class="logo-title">CampusAI</div>
+                <div class="logo-subtitle">Student Portal</div>
+            </div>
+        </div>
+
+
+        <nav>
+
+            <a href="dashboard.html" class="nav-item">
+                <span>🏠</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="ai.html" class="nav-item">
+                <span>🤖</span>
+                <span>AI Assistant</span>
+            </a>
+
+            <a href="academic.html" class="nav-item">
+                <span>📚</span>
+                <span>Academic AI</span>
+            </a>
+
+            <a href="performance.html" class="nav-item">
+                <span>📊</span>
+                <span>Performance</span>
+            </a>
+
+            <a href="attendance.html" class="nav-item active">
+                <span>🗓️</span>
+                <span>Attendance</span>
+            </a>
+
+            <a href="feedback.html" class="nav-item">
+                <span>💬</span>
+                <span>Feedback</span>
+            </a>
+
+            <a href="events.html" class="nav-item">
+                <span>🎯</span>
+                <span>Events</span>
+            </a>
+
+            <a href="career.html" class="nav-item">
+                <span>🚀</span>
+                <span>Career</span>
+            </a>
+
+            <a href="resources.html" class="nav-item">
+                <span>📁</span>
+                <span>Resources</span>
+            </a>
+
+            <a href="content.html" class="nav-item">
+                <span>✨</span>
+                <span>AI Content</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="faculty-login.html" class="nav-item">
+                <span>👨‍🏫</span>
+                <span>Faculty Portal</span>
+            </a>
+
+            <a href="index.html" class="nav-item">
+                <span>↩️</span>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+
+        <div class="topbar">
+
+            <div>
+                <div class="small-text">
+                    GM UNIVERSITY • STUDENT PORTAL
+                </div>
+            </div>
+
+            <div class="profile">
+
+                <div class="avatar">
+                    S
+                </div>
+
+                <div>
+
+                    <strong>Sampada</strong>
+
+                    <div class="small-text">
+                        B.Tech ISE • 1st Year
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PAGE HEADER -->
+
+        <div class="page-header">
+
+            <div>
+
+                <div class="section-label">
+                    ACADEMIC MONITORING
+                </div>
+
+                <h1>
+                    My Attendance
+                </h1>
+
+                <p>
+                    Track your subject-wise attendance and maintain
+                    the required attendance percentage.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- STUDENT INFO -->
+
+        <div class="panel" style="margin-bottom:20px;">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <div class="section-label">
+                        STUDENT
+                    </div>
+
+                    <h2>
+                        Sampada
+                    </h2>
+
+                </div>
+
+                <div class="ai-badge">
+                    B.Tech ISE • 1st Year
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ATTENDANCE TABLE -->
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <div class="section-label">
+                        SUBJECT-WISE ATTENDANCE
+                    </div>
+
+                    <h2>
+                        My Attendance Report
+                    </h2>
+
+                </div>
+
+                <div class="ai-badge">
+                    Requirement: 85%
+                </div>
+
+            </div>
+
+
+            <table class="data-table">
+
+                <thead>
+
+                    <tr>
+                        <th>Subject</th>
+                        <th>Attended</th>
+                        <th>Total Classes</th>
+                        <th>Percentage</th>
+                        <th>Status</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="attendanceTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+
+        <!-- OVERALL -->
+
+        <div class="stats" style="margin-top:20px;">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📊
+                </div>
+
+                <div>
+
+                    <div class="small-text">
+                        Overall Attendance
+                    </div>
+
+                    <h2 id="overallAttendance">
+                        -
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ✅
+                </div>
+
+                <div>
+
+                    <div class="small-text">
+                        Subjects Above 85%
+                    </div>
+
+                    <h2 id="subjectsSafe">
+                        -
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📅
+                </div>
+
+                <div>
+
+                    <div class="small-text">
+                        Attendance Status
+                    </div>
+
+                    <h2 id="overallStatus">
+                        -
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- AI INSIGHT -->
+
+        <div class="panel" style="margin-top:20px;">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <div class="section-label">
+                        AI ATTENDANCE INSIGHT
+                    </div>
+
+                    <h2>
+                        CampusAI Analysis
+                    </h2>
+
+                </div>
+
+                <div class="ai-badge">
+                    AI Powered
+                </div>
+
+            </div>
+
+
+            <div class="insight-box" id="attendanceInsight">
+                Analyzing your attendance...
+            </div>
+
+        </div>
+
+
+
+        <!-- CALCULATOR -->
+
+        <div class="panel" style="margin-top:20px;">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <div class="section-label">
+                        ATTENDANCE CALCULATOR
+                    </div>
+
+                    <h2>
+                        Calculate Attendance
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-card">
+
+                <label>
+                    Total Classes
+                </label>
+
+                <input
+                    type="number"
+                    id="totalClasses"
+                    placeholder="Example: 50"
+                    min="1"
+                >
+
+
+                <label>
+                    Classes Attended
+                </label>
+
+                <input
+                    type="number"
+                    id="attendedClasses"
+                    placeholder="Example: 44"
+                    min="0"
+                >
+
+
+                <label>
+                    Required Attendance (%)
+                </label>
+
+                <input
+                    type="number"
+                    id="requiredAttendance"
+                    value="85"
+                    min="1"
+                    max="100"
+                >
+
+
+                <button
+                    class="action-btn"
+                    onclick="calculateAttendance()"
+                    style="margin-top:15px;"
+                >
+                    Calculate
+                </button>
+
+
+                <div
+                    class="result"
+                    id="attendanceResult"
+                    style="display:none;"
+                ></div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+
+<!-- DATABASE -->
+
+<script src="data.js"></script>
+
+
+<script>
+
+function loadSampadaAttendance() {
+
+    const student = students["Sampada"];
+
+    const subjects = ["AI", "PCP", "DLSS", "EM1"];
+
+    let tableHTML = "";
+
+    let totalAttended = 0;
+    let totalClasses = 0;
+    let safeSubjects = 0;
+
+
+    subjects.forEach(subject => {
+
+        const attended =
+            student.attendance[subject];
+
+        const total =
+            student.totalClasses[subject];
+
+        const percentage =
+            Math.round((attended / total) * 100);
+
+
+        totalAttended += attended;
+        totalClasses += total;
+
+
+        let status;
+
+        if (percentage >= 85) {
+
+            status =
+                `<span class="good">✓ Safe</span>`;
+
+            safeSubjects++;
+
+        } else {
+
+            status =
+                `<span class="warning">⚠ Needs Attention</span>`;
+
+        }
+
+
+        tableHTML += `
+
+            <tr>
+
+                <td>
+                    <strong>${subject}</strong>
+                </td>
+
+                <td>
+                    ${attended}
+                </td>
+
+                <td>
+                    ${total}
+                </td>
+
+                <td>
+                    <strong>${percentage}%</strong>
+                </td>
+
+                <td>
+                    ${status}
+                </td>
+
+            </tr>
+
+        `;
+    });
+
+
+    document.getElementById("attendanceTable")
+        .innerHTML = tableHTML;
+
+
+
+    /* OVERALL */
+
+    const overall =
+        Math.round(
+            (totalAttended / totalClasses) * 100
+        );
+
+
+    document.getElementById("overallAttendance")
+        .textContent = overall + "%";
+
+
+    document.getElementById("subjectsSafe")
+        .textContent =
+        safeSubjects + "/4";
+
+
+    document.getElementById("overallStatus")
+        .textContent =
+        overall >= 85
+            ? "Good"
+            : "Improve";
+
+
+
+    /* AI INSIGHT */
+
+    let lowestSubject = "";
+    let lowestPercentage = 999;
+
+
+    subjects.forEach(subject => {
+
+        const attended =
+            student.attendance[subject];
+
+        const total =
+            student.totalClasses[subject];
+
+        const percentage =
+            (attended / total) * 100;
+
+
+        if (percentage < lowestPercentage) {
+
+            lowestPercentage =
+                percentage;
+
+            lowestSubject =
+                subject;
+
+        }
+
+    });
+
+
+    lowestPercentage =
+        Math.round(lowestPercentage);
+
+
+    let message;
+
+
+    if (overall >= 85) {
+
+        message = `
+            Your overall attendance is
+            <strong>${overall}%</strong>, which is above
+            the required 85% threshold.
+
+            Your attendance is currently in a safe range.
+            Keep maintaining regular attendance,
+            especially in <strong>${lowestSubject}</strong>
+            where your attendance is comparatively lower.
+        `;
+
+    } else {
+
+        message = `
+            Your overall attendance is
+            <strong>${overall}%</strong>, which is below
+            the required 85% threshold.
+
+            You should focus on improving attendance,
+            especially in <strong>${lowestSubject}</strong>.
+        `;
+
+    }
+
+
+    document.getElementById("attendanceInsight")
+        .innerHTML = message;
+
+}
+
+
+
+function calculateAttendance() {
+
+    const total =
+        Number(
+            document.getElementById("totalClasses").value
+        );
+
+    const attended =
+        Number(
+            document.getElementById("attendedClasses").value
+        );
+
+    const required =
+        Number(
+            document.getElementById("requiredAttendance").value
+        );
+
+
+    const result =
+        document.getElementById("attendanceResult");
+
+
+    if (
+        total <= 0 ||
+        attended < 0 ||
+        attended > total
+    ) {
+
+        result.style.display = "block";
+
+        result.innerHTML =
+            "Please enter valid attendance values.";
+
+        return;
+
+    }
+
+
+    const percentage =
+        (attended / total) * 100;
+
+
+    let message = `
+        Current Attendance:
+        <strong>${percentage.toFixed(2)}%</strong>
+        <br><br>
+    `;
+
+
+    if (percentage >= required) {
+
+        message += `
+            ✓ You have met the required
+            ${required}% attendance.
+        `;
+
+    } else {
+
+        const classesNeeded =
+            Math.ceil(
+                (required * total - 100 * attended)
+                /
+                (100 - required)
+            );
+
+
+        message += `
+            ⚠ You need to attend approximately
+            <strong>${classesNeeded}</strong>
+            more consecutive classes to reach
+            ${required}%.
+        `;
+
+    }
+
+
+    result.style.display = "block";
+
+    result.innerHTML = message;
+
+}
+
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    loadSampadaAttendance
+);
+
+</script>
+
+</body>
+
+</html>

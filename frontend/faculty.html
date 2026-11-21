@@ -1,0 +1,881 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusAI | Faculty</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .faculty-hero {
+            background: linear-gradient(135deg, #eef2ff, #f8fafc);
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 22px;
+        }
+
+        .faculty-hero h1 {
+            margin: 6px 0;
+            font-size: 30px;
+        }
+
+        .faculty-hero p {
+            color: #64748b;
+            margin: 0;
+        }
+
+        .student-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 22px;
+        }
+
+        .student-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .student-card:hover,
+        .student-card.active {
+            border-color: #6366f1;
+            box-shadow: 0 5px 20px rgba(99, 102, 241, 0.12);
+        }
+
+        .student-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #6366f1;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .student-card h3 {
+            margin: 0 0 5px;
+        }
+
+        .student-card p {
+            margin: 0;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 13px;
+            border-bottom: 1px solid #e2e8f0;
+            text-align: left;
+        }
+
+        .data-table th {
+            font-size: 12px;
+            color: #64748b;
+            text-transform: uppercase;
+        }
+
+        .good {
+            color: #16a34a;
+            font-weight: 700;
+        }
+
+        .warning {
+            color: #d97706;
+            font-weight: 700;
+        }
+
+        .insight-box {
+            margin-top: 20px;
+            padding: 18px;
+            background: #eef2ff;
+            border-radius: 12px;
+            color: #3730a3;
+            line-height: 1.6;
+        }
+
+        .faculty-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 18px;
+            flex-wrap: wrap;
+        }
+
+        .faculty-actions button {
+            border: none;
+            background: #6366f1;
+            color: white;
+            padding: 11px 17px;
+            border-radius: 9px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .faculty-actions button:hover {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 900px) {
+            .student-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .faculty-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .student-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+<div class="app">
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">
+                AI
+            </div>
+
+            <div>
+                <div class="logo-title">
+                    CampusAI
+                </div>
+
+                <div class="logo-subtitle">
+                    Faculty Portal
+                </div>
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <a href="dashboard.html" class="nav-item">
+                <span>🏠</span>
+                <span>Student Dashboard</span>
+            </a>
+
+            <a href="ai.html" class="nav-item">
+                <span>🤖</span>
+                <span>AI Assistant</span>
+            </a>
+
+            <a href="academic.html" class="nav-item">
+                <span>📚</span>
+                <span>Academic AI</span>
+            </a>
+
+            <a href="performance.html" class="nav-item">
+                <span>📊</span>
+                <span>Performance</span>
+            </a>
+
+            <a href="attendance.html" class="nav-item">
+                <span>🗓️</span>
+                <span>Attendance</span>
+            </a>
+
+            <a href="feedback.html" class="nav-item">
+                <span>💬</span>
+                <span>Feedback</span>
+            </a>
+
+            <a href="events.html" class="nav-item">
+                <span>🎯</span>
+                <span>Events</span>
+            </a>
+
+            <a href="career.html" class="nav-item">
+                <span>🚀</span>
+                <span>Career</span>
+            </a>
+
+            <a href="resources.html" class="nav-item">
+                <span>📁</span>
+                <span>Resources</span>
+            </a>
+
+            <a href="content.html" class="nav-item">
+                <span>✨</span>
+                <span>AI Content</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="index.html" class="nav-item">
+                <span>↩️</span>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- MAIN -->
+
+    <main class="main-content">
+
+
+        <!-- TOP BAR -->
+
+        <div class="topbar">
+
+            <div>
+                <div class="small-text">
+                    GM UNIVERSITY • FACULTY PORTAL
+                </div>
+            </div>
+
+            <div class="profile">
+
+                <div class="avatar">
+                    F
+                </div>
+
+                <div>
+                    <strong>Faculty</strong>
+
+                    <div class="small-text">
+                        Faculty / Administrator
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- HERO -->
+
+        <section class="faculty-hero">
+
+            <div class="section-label">
+                FACULTY MANAGEMENT
+            </div>
+
+            <h1>
+                Student Analytics
+            </h1>
+
+            <p>
+                Monitor attendance, marks and academic performance
+                of your students.
+            </p>
+
+        </section>
+
+
+
+        <!-- STUDENT CARDS -->
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                <div>
+                    <div class="section-label">
+                        STUDENTS
+                    </div>
+
+                    <h2>
+                        Select Student
+                    </h2>
+                </div>
+
+                <div class="ai-badge">
+                    4 Students
+                </div>
+
+            </div>
+
+
+            <div class="student-grid">
+
+                <div class="student-card active"
+                     onclick="selectStudent('Sampada', this)">
+
+                    <div class="student-avatar">
+                        S
+                    </div>
+
+                    <h3>Sampada</h3>
+
+                    <p>B.Tech ISE • 1st Year</p>
+
+                </div>
+
+
+                <div class="student-card"
+                     onclick="selectStudent('Priya', this)">
+
+                    <div class="student-avatar">
+                        P
+                    </div>
+
+                    <h3>Priya</h3>
+
+                    <p>B.Tech ISE • 1st Year</p>
+
+                </div>
+
+
+                <div class="student-card"
+                     onclick="selectStudent('Nithin', this)">
+
+                    <div class="student-avatar">
+                        N
+                    </div>
+
+                    <h3>Nithin</h3>
+
+                    <p>B.Tech ISE • 1st Year</p>
+
+                </div>
+
+
+                <div class="student-card"
+                     onclick="selectStudent('Sudeep', this)">
+
+                    <div class="student-avatar">
+                        S
+                    </div>
+
+                    <h3>Sudeep</h3>
+
+                    <p>B.Tech ISE • 1st Year</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- DATA -->
+
+        <div class="faculty-grid">
+
+
+            <!-- ATTENDANCE -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <div class="section-label">
+                            ATTENDANCE
+                        </div>
+
+                        <h2 id="attendanceTitle">
+                            Sampada's Attendance
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <table class="data-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>Subject</th>
+                            <th>Attendance</th>
+                            <th>Status</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="attendanceBody">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+
+            <!-- MARKS -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <div class="section-label">
+                            MARKS
+                        </div>
+
+                        <h2 id="marksTitle">
+                            Sampada's Marks
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <table class="data-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>Subject</th>
+                            <th>Marks</th>
+                            <th>Grade</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="marksBody">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PERFORMANCE -->
+
+        <div class="panel" style="margin-top:20px;">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <div class="section-label">
+                        PERFORMANCE ANALYSIS
+                    </div>
+
+                    <h2 id="performanceTitle">
+                        Sampada's Performance
+                    </h2>
+
+                </div>
+
+                <div class="ai-badge">
+                    AI Analysis
+                </div>
+
+            </div>
+
+
+            <div class="stats">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📊
+                    </div>
+
+                    <div>
+
+                        <div class="small-text">
+                            Overall Attendance
+                        </div>
+
+                        <h2 id="overallAttendance">
+                            -
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📝
+                    </div>
+
+                    <div>
+
+                        <div class="small-text">
+                            Average Marks
+                        </div>
+
+                        <h2 id="averageMarks">
+                            -
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🏆
+                    </div>
+
+                    <div>
+
+                        <div class="small-text">
+                            Best Subject
+                        </div>
+
+                        <h2 id="bestSubject">
+                            -
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="insight-box" id="facultyInsight">
+                Analyzing student performance...
+            </div>
+
+
+            <div class="faculty-actions">
+
+                <button onclick="showReport()">
+                    📋 Generate Report
+                </button>
+
+                <button onclick="showAttendanceSummary()">
+                    📊 Attendance Summary
+                </button>
+
+            </div>
+
+            <div id="facultyMessage"></div>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+
+<!-- DATABASE -->
+
+<script src="data.js"></script>
+
+
+<script>
+
+let currentStudent = "Sampada";
+
+
+function getGrade(mark) {
+
+    if (mark >= 45) return "A+";
+    if (mark >= 40) return "A";
+    if (mark >= 35) return "B+";
+    if (mark >= 30) return "B";
+
+    return "C";
+}
+
+
+
+function selectStudent(student, card) {
+
+    currentStudent = student;
+
+    document
+        .querySelectorAll(".student-card")
+        .forEach(item => {
+            item.classList.remove("active");
+        });
+
+    card.classList.add("active");
+
+    loadStudentData();
+}
+
+
+
+function loadStudentData() {
+
+    const student = students[currentStudent];
+
+    const subjects = ["AI", "PCP", "DLSS", "EM1"];
+
+
+    /* ATTENDANCE */
+
+    let attendanceHTML = "";
+
+    subjects.forEach(subject => {
+
+        const attended =
+            student.attendance[subject];
+
+        const total =
+            student.totalClasses[subject];
+
+        const percentage =
+            Math.round((attended / total) * 100);
+
+        const status =
+            percentage >= 85
+                ? `<span class="good">Good</span>`
+                : `<span class="warning">Needs Attention</span>`;
+
+        attendanceHTML += `
+
+            <tr>
+
+                <td>${subject}</td>
+
+                <td>${attended}/${total} (${percentage}%)</td>
+
+                <td>${status}</td>
+
+            </tr>
+
+        `;
+    });
+
+
+    document.getElementById("attendanceBody")
+        .innerHTML = attendanceHTML;
+
+
+
+    /* MARKS */
+
+    let marksHTML = "";
+
+    subjects.forEach(subject => {
+
+        const mark =
+            student.marks[subject];
+
+        marksHTML += `
+
+            <tr>
+
+                <td>${subject}</td>
+
+                <td>${mark}/50</td>
+
+                <td>${getGrade(mark)}</td>
+
+            </tr>
+
+        `;
+    });
+
+
+    document.getElementById("marksBody")
+        .innerHTML = marksHTML;
+
+
+
+    /* OVERALL ATTENDANCE */
+
+    const overallAttendance =
+        getOverallAttendance(currentStudent);
+
+    document.getElementById("overallAttendance")
+        .textContent = overallAttendance + "%";
+
+
+
+    /* AVERAGE MARKS */
+
+    const average =
+        getAverageMarks(currentStudent);
+
+    document.getElementById("averageMarks")
+        .textContent = average + "/50";
+
+
+
+    /* BEST SUBJECT */
+
+    let bestSubject = "";
+    let bestMark = -1;
+
+    subjects.forEach(subject => {
+
+        if (student.marks[subject] > bestMark) {
+
+            bestMark =
+                student.marks[subject];
+
+            bestSubject =
+                subject;
+        }
+    });
+
+
+    document.getElementById("bestSubject")
+        .textContent =
+        bestSubject;
+
+
+
+    /* TITLES */
+
+    document.getElementById("attendanceTitle")
+        .textContent =
+        currentStudent + "'s Attendance";
+
+    document.getElementById("marksTitle")
+        .textContent =
+        currentStudent + "'s Marks";
+
+    document.getElementById("performanceTitle")
+        .textContent =
+        currentStudent + "'s Performance";
+
+
+
+    /* AI INSIGHT */
+
+    let weakestSubject = "";
+    let weakestMark = 999;
+
+    subjects.forEach(subject => {
+
+        if (student.marks[subject] < weakestMark) {
+
+            weakestMark =
+                student.marks[subject];
+
+            weakestSubject =
+                subject;
+        }
+    });
+
+
+    document.getElementById("facultyInsight")
+        .innerHTML = `
+
+        <strong>
+            🤖 AI Insight for ${currentStudent}
+        </strong>
+
+        <br>
+
+        ${currentStudent} has an overall attendance of
+        <strong>${overallAttendance}%</strong> and an average
+        score of <strong>${average}/50</strong>.
+
+        The strongest subject is
+        <strong>${bestSubject}</strong>.
+
+        AI recommends giving additional attention to
+        <strong>${weakestSubject}</strong>.
+
+    `;
+}
+
+
+
+function showReport() {
+
+    document.getElementById("facultyMessage")
+        .innerHTML = `
+
+        <div class="insight-box">
+
+            📋 Report generated for
+            <strong>${currentStudent}</strong>.
+
+            Attendance: ${getOverallAttendance(currentStudent)}%
+
+            <br>
+
+            Average Marks:
+            ${getAverageMarks(currentStudent)}/50
+
+        </div>
+
+    `;
+}
+
+
+
+function showAttendanceSummary() {
+
+    document.getElementById("facultyMessage")
+        .innerHTML = `
+
+        <div class="insight-box">
+
+            📊 ${currentStudent}'s overall attendance is
+            <strong>${getOverallAttendance(currentStudent)}%</strong>.
+
+            ${getOverallAttendance(currentStudent) >= 85
+                ? "Student is above the required attendance threshold."
+                : "Student requires improved attendance."}
+
+        </div>
+
+    `;
+}
+
+
+/* INITIAL LOAD */
+
+loadStudentData();
+
+</script>
+
+</body>
+
+</html>
+```

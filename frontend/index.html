@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusAI | Smart Campus Management</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Landing page only */
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        .landing-page {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .landing-content {
+            width: 100%;
+            max-width: 1000px;
+            padding: 60px 30px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .landing-logo {
+            width: 110px;
+            height: 110px;
+            object-fit: contain;
+            margin-bottom: 25px;
+        }
+
+        .college-name {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: #b91c1c;
+            margin-bottom: 35px;
+        }
+
+        .campus-title {
+            font-size: clamp(48px, 8vw, 88px);
+            font-weight: 800;
+            margin: 0;
+            line-height: 1;
+            color: #111827;
+            letter-spacing: -3px;
+        }
+
+        .campus-title span {
+            color: #b91c1c;
+        }
+
+        .landing-subtitle {
+            max-width: 650px;
+            margin: 25px auto 40px;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #64748b;
+        }
+
+        .enter-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 34px;
+            border: none;
+            border-radius: 10px;
+            background: #b91c1c;
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: 0.25s ease;
+            box-shadow: 0 10px 25px rgba(185, 28, 28, 0.22);
+        }
+
+        .enter-btn:hover {
+            transform: translateY(-2px);
+            background: #991b1b;
+            box-shadow: 0 14px 30px rgba(185, 28, 28, 0.3);
+        }
+
+        .features {
+            margin: 55px auto 0;
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            max-width: 850px;
+        }
+
+        .feature {
+            min-width: 170px;
+            padding: 18px 20px;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.85);
+            box-sizing: border-box;
+        }
+
+        .feature-icon {
+            font-size: 25px;
+            margin-bottom: 8px;
+        }
+
+        .feature-title {
+            font-weight: 700;
+            color: #1f2937;
+            font-size: 14px;
+        }
+
+        .feature-text {
+            margin-top: 5px;
+            color: #64748b;
+            font-size: 12px;
+        }
+
+        @media (max-width: 600px) {
+            .landing-content {
+                padding: 40px 20px;
+            }
+
+            .campus-title {
+                font-size: 52px;
+            }
+
+            .landing-subtitle {
+                font-size: 15px;
+            }
+
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="landing-page">
+
+    <div class="landing-content">
+
+        <img
+            src="https://www.gmu.ac.in/assets/imgs/logo.jpg"
+            alt="GM University Logo"
+            class="landing-logo"
+        >
+
+        <div class="college-name">
+            GM UNIVERSITY, DAVANGERE
+        </div>
+
+        <h1 class="campus-title">
+            CAMPUS<span>AI</span>
+        </h1>
+
+        <p class="landing-subtitle">
+            AI-powered Smart Campus Management for smarter learning,
+            better performance and a connected campus experience.
+        </p>
+
+        <a href="dashboard.html" class="enter-btn">
+            Enter CampusAI →
+        </a>
+
+        <div class="features">
+
+            <div class="feature">
+                <div class="feature-icon">🤖</div>
+                <div class="feature-title">AI Assistant</div>
+                <div class="feature-text">
+                    Get intelligent academic support
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <div class="feature-title">Performance</div>
+                <div class="feature-text">
+                    Track your academic progress
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">📅</div>
+                <div class="feature-title">Campus Events</div>
+                <div class="feature-text">
+                    Stay updated with campus activities
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🎯</div>
+                <div class="feature-title">Career Guidance</div>
+                <div class="feature-text">
+                    Plan your future with AI
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
